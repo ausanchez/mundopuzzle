@@ -24,16 +24,14 @@ const Navbar = () => {
                                 <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categorias</a>
                                 <div className="dropdown-menu">
                                     <a className="dropdown-item" href="#">Infantiles</a>
-                                    <a className="dropdown-item" href="#">Hasta 1000pz</a>
                                     <a className="dropdown-item" href="#">Hasta 3000pz</a>
                                     <a className="dropdown-item" href="#">Hasta 5000pz</a>
-                                    <a className="dropdown-item" href="#">Hasta 10000pz</a>
                                     <div className="dropdown-divider" />
                                     <a className="dropdown-item" href="#">Pegamentos y Porta Puzzles</a>
                                 </div>
                             </li>
                         </ul>
-                        <CartWidget />
+                        <CartWidget/>
                         <form className="d-flex">
                             <input className="form-control me-sm-2" type="text" placeholder="¿Qué necesitas?" />
                             <button className="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>

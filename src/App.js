@@ -6,7 +6,7 @@ function App() {
   return (
     <>
     <Navbar/>
-    <ItemListContainer greeting={'Bienvenido a la lista de productos de Mundo Puzzle'}/>
+    <ItemListContainer />
     </>
   );
 }
