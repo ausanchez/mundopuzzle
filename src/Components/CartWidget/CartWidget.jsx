@@ -5,6 +5,7 @@ const CartWidget = () => {
     return (
         <>
          <i className="bi bi-cart carrito" />
+         {/* <span>2</span> */}
         </>
     );
 }
