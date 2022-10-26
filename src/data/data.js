@@ -35,4 +35,31 @@ export const arrayPuzzles = [
         category:'Accesorios'
     },
 
+    {
+        id:5,
+        title:'Pegamento Puzzle',
+        description:'Super pegamento para rompecabezas - 200ml',
+        price: 959,
+        pictureURL:'https://http2.mlstatic.com/D_NQ_NP_867519-MLA31634128587_072019-O.webp',
+        category:'Accesorios'
+    },
+
+    {
+        id:6,
+        title:'Puzzle Globos Aerostaticos',
+        description:'Puzzle de 1500 piezas con imagen de globos',
+        price: 2558,
+        pictureURL:'https://www.educaborras.com/wp-content/uploads/17977_01_med.jpg',
+        category:'Medium'
+    },
+
+    {
+        id:7,
+        title:'Puzzle POKEMON',
+        description:'Puzzle de 1000 piezas con imagen de POKEMON',
+        price: 4558,
+        pictureURL:'https://www.mundoprimaria.com/wp-content/uploads/2021/11/puzles-para-ninos.jpg',
+        category:'Infantiles'
+    },
+
 ]

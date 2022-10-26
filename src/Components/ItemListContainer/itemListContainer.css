@@ -1,7 +1,6 @@
 #itemListContainer {
   width: 100%;
-  height: 100vh;
-  background-color: #cecfcf;
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
