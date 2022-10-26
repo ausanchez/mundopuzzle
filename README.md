@@ -4,7 +4,7 @@
 Mi proyecto se trata de facilitar un catalogo de los mas variados motivos de rompecabezas tanto para adultos como para niños. También busca proveer de aquellos accesorios que facilitarán la jugabilidad y mejorarán la experiencia de cada hobbista.
 
 # Detalle de Navegación:
-![image](https://github.com/ausanchez/mundopuzzle/blob/main/src/media/Document%20%E2%80%94%20Mozilla%20Firefox%202022-10-26%2013-38-25.mp4)
+![image](https://github.com/ausanchez/mundopuzzle/blob/main/src/media/mundopuzzle.gif)
 
 # Dependencias
 
