@@ -30,7 +30,7 @@ export const arrayPuzzles = [
         id:4,
         title:'Roll Puzzle',
         description:'Rollo porta rompecabezas XXL para puzzles de hasta 5000 piezas',
-        price: 5558,
+        price: 7558,
         pictureURL:'https://puzzlemania.com.ar/4010-large_default/puzzle-ravensburger-roll-your-puzzle-grande.jpg',
         category:'Accesorios'
     },
