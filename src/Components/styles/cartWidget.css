@@ -1,0 +1,17 @@
+.cartIcon {
+    font-size: 1.5rem;
+    
+}
+
+
+
+.cartBubble {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #ffffff;
+    background-color: #df23f8ce;
+    text-align: center;
+    border-radius: 1rem;
+    font-size: 1rem;
+}

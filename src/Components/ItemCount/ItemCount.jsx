@@ -1,34 +1,72 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+/* import React, {useState, useEffect} from "react";
+import './itemCount.css'
 
-import './itemCount.css';
 
-const ItemCount = ({iniciar,stock,onAdd}) => {
+const ItemCount = ({initial, stock, onAdd}) => {
 
-    const [count, setCount] = useState(parseInt(iniciar));
-    
-    const decrementar = () => {
-        setCount(count - 1)
+    const [count, setCount] = useState(parseInt(initial));
+
+    const decrease = () => {
+        setCount(count-1)
     }
 
-    const incrementar = () => {
-        setCount(count + 1)
+    const increase = () => {
+        setCount(count+1)
     }
 
     useEffect(() => {
-        setCount(parseInt(iniciar))
-    }, [iniciar]);
+        setCount(parseInt(initial));
 
-    return (
-        <div className='contador'>
-            <button disabled={count <= 1} onClick={decrementar}>-</button>
-            <span>{count}</span>
-            <button disabled={count >= stock} onClick={incrementar}>+</button>
-            <div>
-                <button disabled={stock <= 0} onClick={()=> onAdd(count)}>Agregar al carrito</button>
-            </div>
-        </div>
-    );
+    }, [initial]);
+
+
+  return (
+    <div className="counter">
+      <button disabled={count <= 1} onClick={decrease}>-</button>;
+      <span>{count}</span>;
+      <button disabled={count >= stock} onClick={increase}>+</button>;
+      <div>
+        <button disabled={stock <= 0} onClick={() => onAdd(count)} className="btn btn-success">Agregar al carrito</button>;
+      </div>
+    </div>
+  );
+};
+
+export default ItemCount;
+ */
+
+import '../styles/itemCount.css'
+
+import React, {useState, useEffect} from 'react';
+
+const ItemCount = ({initial, stock, onAdd}) => {
+
+  const [count, setCount] = useState(parseInt(initial));
+
+  const decrease = () => {
+    setCount(count - 1);
+  }
+
+  const increase = () => {
+    setCount(count + 1);
+  }
+
+  useEffect(() => {
+    setCount(parseInt(initial))
+  }, [initial]);
+
+
+
+  return (
+    <div className='counter'>
+     <button disabled={count <= 1} onClick={decrease}> - </button>
+     <span>{count}</span>
+     <button disabled={count >= stock} onClick={increase}> + </button>
+     <div>
+      <button disabled={stock <= 0} onClick={() => onAdd(count)} >Agregar al carrito</button>
+     </div>
+    </div>
+  );
 }
 
 export default ItemCount;

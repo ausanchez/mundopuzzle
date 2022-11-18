@@ -1,34 +1,42 @@
 import React, {useEffect, useState} from 'react';
-import { getArray } from '../helpers/getArray';
-import { arrayPuzzles } from '../../data/data';
-import { useParams } from 'react-router-dom';
-import ItemList from './ItemList';
 import Loader from '../Loader/Loader';
-import './itemListContainer.css'
-
+import ItemList from './ItemList';
+import '../../Components/styles/itemListContainer.css'
+import { useParams } from 'react-router-dom';
+import {getFirestore, collection, getDocs, query, where} from 'firebase/firestore'
 
 const ItemListContainer = () => {
 
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
-    const {categoryId} = useParams();
+    const {categoryId} = useParams()
 
     useEffect(() => {
-        getArray(arrayPuzzles)
-        .then(res =>{
-            categoryId ? setProducts(res.filter((item)=> item.category === categoryId)) : setProducts(res)
-        })
-        .catch(err => console.log(err))
-        .finally(() => setLoading(false))
-    },[categoryId])
-    
+    const querydb = getFirestore();
+    const queryCollection = collection(querydb, 'puzzles');
+    if(categoryId) {
+    const queryFilter = query(queryCollection, where('category', '==', categoryId))
+    getDocs(queryFilter)
+    .then(res => setProducts(res.docs.map(product => ({id: product.id, ...product.data()}))))
+    .catch(err=>console.log(err))
+    .finally(()=>setLoading(false))
+    } else {
+      getDocs(queryCollection)
+    .then(res => setProducts(res.docs.map(product => ({id: product.id, ...product.data()}))))
+    .catch(err=>console.log(err))
+    .finally(()=>setLoading(false))
+    }
+  
+  }, [categoryId]);
+
 
     return (
-        <div id='itemListContainer'>
-            {
-                loading ? <Loader/> :  <ItemList items = {products} />
-            }
+        <div className='itemListContainer'>
+          {
+            loading ? <Loader/> : <ItemList items= {products} />
+          }  
         </div>
-    )
-    }
-export default ItemListContainer
+    );
+}
+
+export default ItemListContainer;

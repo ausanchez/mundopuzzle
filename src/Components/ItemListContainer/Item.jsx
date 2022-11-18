@@ -1,18 +1,25 @@
+import '../styles/item.css'
 import React from 'react';
-import './Item.jsx'
 import { Link } from 'react-router-dom';
 
-const Item = ({id, title, description, price, pictureURL }) => {
-    return (
-        <div className="card" style={{ width: '18rem' }}>
-            <img src={pictureURL} className="card-img-top" alt="..." />
-            <div className="card-body">
-                <h5 className="card-title">{title}</h5>
-                <h6 className="card-title">Precio: ${price}</h6>
-                <Link to = {`/item/${id}`} className="btn btn-primary">Ver mas...</Link>
-            </div>
+
+const Item = ({ info }) => {
+
+  
+  return (
+    <>
+      <div className="card" style={{ width: "20rem" }}>
+        <img src={info.pictureURL} className="card-img-top" alt={info.title} />
+        <div className="card-body">
+          <h5 className="card-title">{info.title}</h5>
+          <p className="card-text">
+            $ {info.price}
+          </p>
+          <button className="btn btn-secondary " > <Link className='link-detail' to={`/item/${info.id}`}>Ver Detalles...</Link> </button>
         </div>
-    );
+      </div>
+    </>
+  );
 }
 
 export default Item;
